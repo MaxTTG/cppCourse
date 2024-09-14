@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/otus_cpp.dir/main.cpp.o -o otus_cpp  HW1/libHW1_LIB.a 
