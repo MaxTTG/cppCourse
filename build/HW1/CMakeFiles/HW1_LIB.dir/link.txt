@@ -1,2 +1,0 @@
-/usr/bin/ar qc libHW1_LIB.a CMakeFiles/HW1_LIB.dir/hw1.cpp.o
-/usr/bin/ranlib libHW1_LIB.a
