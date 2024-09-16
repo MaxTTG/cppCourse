@@ -16,7 +16,8 @@ jobs:
       - name: Project build
         run: |
           cmake . -DPATCH_VERSION=${{ github.run_number }}
-          cmake --build . --config Release --target all
+          cmake --build . --config Release
+          cmake --build . --config Release --target package
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1

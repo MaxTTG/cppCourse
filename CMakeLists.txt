@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.22)
 
+# VERSION
 if (NOT DEFINED MAJOR_VERSION)
     set(MAJOR_VERSION "1" CACHE INTERNAL "Major version")
 endif (NOT DEFINED MAJOR_VERSION)
@@ -14,6 +15,7 @@ endif (NOT DEFINED PATCH_VERSION)
 
 set(PROJECT_VERSION ${MAJOR_VERSION}.${MINOR_VERSION}.${PATCH_VERSION})
 
+# PROJECT
 include(./cmake/utils.cmake)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -22,8 +24,10 @@ project(otus_cpp VERSION ${PROJECT_VERSION})
 
 add_executable(${PROJECT_NAME} main.cpp)
 
+# ADDING HW's
 ADD_HW(1)
 
+# DEB
 set(CPACK_GENERATOR DEB)
 
 set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
