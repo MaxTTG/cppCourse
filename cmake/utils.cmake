@@ -11,9 +11,4 @@ function(ADD_HW NUMBER)
             -Wall -Wextra -pedantic -Werror
         )
     endif()
-
-    set_target_properties(HW${NUMBER}_LIB PROPERTIES
-        CXX_STANDARD 20
-        CXX_STANDARD_REQUIRED ON
-    )
 endfunction(ADD_HW NUMBER)

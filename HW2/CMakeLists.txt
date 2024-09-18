@@ -1,0 +1,11 @@
+project(HW2 VERSION ${MAJOR_VERSION}.${MINOR_VERSION}.${PATCH_VERSION})
+
+set(HEADERS hw2.hpp)
+set(SOURCES hw2.cpp)
+
+add_library(HW2_LIB ${HEADERS} ${SOURCES})
+
+set_target_properties(HW2_LIB PROPERTIES
+    CXX_STANDARD 14
+    CXX_STANDARD_REQUIRED ON
+)
