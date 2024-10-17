@@ -1,0 +1,11 @@
+project(HW3 VERSION ${MAJOR_VERSION}.${MINOR_VERSION}.${PATCH_VERSION})
+
+set(HEADERS hw3.hpp)
+set(SOURCES hw3.cpp)
+
+add_library(HW3_LIB ${HEADERS} ${SOURCES})
+
+set_target_properties(HW3_LIB PROPERTIES
+    CXX_STANDARD 11
+    CXX_STANDARD_REQUIRED ON
+)
