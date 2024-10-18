@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>cpp-cource: Исходный файл HW4/hw4.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">cpp-cource
+   &#160;<span id="projectnumber">1.4</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_199ba2410f0aec18f9e18c93a33489a8.html">HW4</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">hw4.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;tuple&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>hw4 {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structhw4_1_1is__needed__container.html">   17</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structhw4_1_1is__needed__container.html">is_needed_container</a>: std::false_type {};</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structhw4_1_1is__needed__container_3_01std_1_1vector_3_01T_01_4_01_4.html">   20</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structhw4_1_1is__needed__container.html">is_needed_container</a>&lt;std::vector&lt;T&gt;&gt;: std::true_type {};</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structhw4_1_1is__needed__container_3_01std_1_1list_3_01T_01_4_01_4.html">   23</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structhw4_1_1is__needed__container.html">is_needed_container</a>&lt;std::list&lt;T&gt;&gt;: std::true_type {};</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">using</span> is_vector_or_list = std::enable_if_t&lt;is_needed_container&lt;T&gt;::value&gt;;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">using</span> is_integral_t = std::enable_if_t&lt;std::is_integral_v&lt;T&gt;&gt;;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span>, <span class="keyword">typename</span> = <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structhw4_1_1contain__c__str.html">   41</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structhw4_1_1contain__c__str.html">contain_c_str</a>: std::false_type {};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structhw4_1_1contain__c__str_3_01T_00_01std_1_1enable__if__t_3_01std_1_1is__same__v_3_01decltypead7051262420a7de183dbf5b56dba393.html">   44</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structhw4_1_1contain__c__str.html">contain_c_str</a>&lt;T, std::enable_if_t&lt;std::is_same_v&lt;decltype(std::declval&lt;T&gt;().c_str()), const char*&gt;&gt;&gt;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    : std::true_type {};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">using</span> is_string_t = std::enable_if_t&lt;contain_c_str&lt;T&gt;::value&gt;;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Tail&gt;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">using</span> are_all_the_same_t = std::enable_if_t&lt;std::conjunction_v&lt;std::is_same&lt;T, Tail&gt;...&gt;&gt;;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">namespace </span>{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;constexpr <span class="keywordtype">char</span> SEPARATOR = <span class="charliteral">&#39;.&#39;</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;constexpr <span class="keywordtype">bool</span> is_little_endian() {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    uint16_t num = 0x0102;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    uint8_t* ptr = <span class="keyword">reinterpret_cast&lt;</span>uint8_t*<span class="keyword">&gt;</span>(&amp;num);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> *ptr == 0x02;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> = <span class="keywordtype">void</span>&gt;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">struct </span>has_output_operator: std::false_type {};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">struct </span>has_output_operator&lt;T, std::void_t&lt;decltype(std::cout &lt;&lt; std::declval&lt;T&gt;())&gt;&gt;: std::true_type {};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;template &lt;typename T&gt;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;using can_be_outputed = std::enable_if_t&lt;has_output_operator&lt;T&gt;::value&gt;;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;template &lt;typename T&gt;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;can_be_outputed&lt;T&gt; printArgs(const T&amp; t) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    std::cout &lt;&lt; t &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;template &lt;typename T, typename... Args&gt;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;can_be_outputed&lt;T&gt; printArgs(const T&amp; t, const Args&amp;... args) {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    std::cout &lt;&lt; t &lt;&lt; SEPARATOR;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    printArgs(args...);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;template &lt;typename T&gt;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;is_vector_or_list&lt;T&gt; printArgs(const T&amp; t) {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    auto i = t.begin();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    std::cout &lt;&lt; *(i++);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    for (; i != t.end(); i++) {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        std::cout &lt;&lt; SEPARATOR &lt;&lt; *i;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}  <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;template &lt;typename T&gt;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;is_integral_t&lt;T&gt; print_ip(const T&amp; t) {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    size_t size = sizeof(t);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    auto ptr    = reinterpret_cast&lt;const uint8_t*&gt;(&amp;t);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    if (is_little_endian()) {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        ptr = ptr + size - 1;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    std::vector&lt;int&gt; args;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    for (size_t i = 0; i &lt; size - 1; ++i) {</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        args.push_back(static_cast&lt;int&gt;(*(ptr + (is_little_endian() ? -i : i))));</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    args.push_back(static_cast&lt;int&gt;(*(ptr + (is_little_endian() ? -size + 1 : size - 1))));</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    printArgs(args);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;template &lt;typename T&gt;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;is_string_t&lt;T&gt; print_ip(const T&amp; t) {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    printArgs(t);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;template &lt;typename T&gt;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;is_vector_or_list&lt;T&gt; print_ip(const T&amp; t) {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    printArgs(t);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;template &lt;typename T, typename... Tail&gt;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;are_all_the_same_t&lt;T, Tail...&gt; print_ip(const std::tuple&lt;T, Tail...&gt;&amp; t) {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    std::apply([](const auto&amp;... tupleArgs) { printArgs(tupleArgs...); }, t);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;void solution();</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}  <span class="comment">// namespace hw4</span></div>
+<div class="ttc" id="astructhw4_1_1contain__c__str_html"><div class="ttname"><a href="structhw4_1_1contain__c__str.html">hw4::contain_c_str</a></div><div class="ttdoc">Блок для выявления типов с определенной функцией c_str()</div><div class="ttdef"><b>Definition:</b> hw4.hpp:41</div></div>
+<div class="ttc" id="astructhw4_1_1is__needed__container_html"><div class="ttname"><a href="structhw4_1_1is__needed__container.html">hw4::is_needed_container</a></div><div class="ttdoc">Блок для нахождения std::vector и std::list.</div><div class="ttdef"><b>Definition:</b> hw4.hpp:17</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

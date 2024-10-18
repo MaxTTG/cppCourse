@@ -1,0 +1,12 @@
+digraph "Иерархия классов. Графический вид."
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="std::false_type",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="hw4::contain_c_str\l\< typename, typename \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structhw4_1_1contain__c__str.html",tooltip="Блок для выявления типов с определенной функцией c_str()"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="hw4::is_needed_container\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structhw4_1_1is__needed__container.html",tooltip="Блок для нахождения std::vector и std::list."];
+}
