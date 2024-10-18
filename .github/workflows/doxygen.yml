@@ -3,7 +3,7 @@ name: Generate Doxygen documentation
 on:
   push:
     branches:
-      - main
+      - doxyDebug
 
 jobs:
   doxygen:
@@ -18,6 +18,9 @@ jobs:
       - name: Generate documentation
         run: doxygen Doxyfile
         
+      - name: Create docs/html directory (if missing)
+        run: mkdir -p docs/html
+
       - name: Create .nojekyll file
         run: touch docs/html/.nojekyll
 
