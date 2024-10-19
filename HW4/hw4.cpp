@@ -5,6 +5,10 @@
 #include <tuple>
 #include <vector>
 
+/**
+ * @brief Код скопирован из задания
+ *
+ */
 void hw4::solution() {
     print_ip(int8_t{-1});                            // 255
     print_ip(int16_t{0});                            // 0.0
