@@ -1,0 +1,11 @@
+project(HW4 VERSION ${MAJOR_VERSION}.${MINOR_VERSION}.${PATCH_VERSION})
+
+set(HEADERS hw4.hpp)
+set(SOURCES hw4.cpp)
+
+add_library(HW4_LIB ${HEADERS} ${SOURCES})
+
+set_target_properties(HW4_LIB PROPERTIES
+    CXX_STANDARD 17
+    CXX_STANDARD_REQUIRED ON
+)
