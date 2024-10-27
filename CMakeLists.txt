@@ -6,7 +6,7 @@ if (NOT DEFINED MAJOR_VERSION)
 endif (NOT DEFINED MAJOR_VERSION)
 
 if (NOT DEFINED MINOR_VERSION)
-    set(MINOR_VERSION "4" CACHE INTERNAL "Minor version")
+    set(MINOR_VERSION "5" CACHE INTERNAL "Minor version")
 endif (NOT DEFINED MINOR_VERSION)
 
 if (NOT DEFINED PATCH_VERSION)
@@ -20,7 +20,7 @@ include(./cmake/utils.cmake)
 
 set(CMAKE_CXX_STANDARD 20)
 
-project(print_ip VERSION ${PROJECT_VERSION})
+project(editorOtus VERSION ${PROJECT_VERSION})
 
 add_executable(${PROJECT_NAME} main.cpp)
 
@@ -28,7 +28,8 @@ add_executable(${PROJECT_NAME} main.cpp)
 # ADD_HW(1)
 # ADD_HW(2)
 # ADD_HW(3)
-ADD_HW(4)
+# ADD_HW(4)
+ADD_HW(5)
 
 # DEB
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)

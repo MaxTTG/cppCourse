@@ -35,6 +35,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./print_ip-1.4.${{ github.run_number }}-Linux.deb
-          asset_name: print_ip-1.4.${{ github.run_number }}-Linux.deb
+          asset_path: ./editorOtus-1.5.${{ github.run_number }}-Linux.deb
+          asset_name: editorOtus-1.5.${{ github.run_number }}-Linux.deb
           asset_content_type: application/vnd.debian.binary-package
