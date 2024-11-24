@@ -2,12 +2,14 @@
 // #include "HW1/hw1.hpp"
 // #include "HW3/hw3.hpp"
 // #include "HW4/hw4.hpp"
-#include "HW5/hw5.hpp"
+// #include "HW5/hw5.hpp"
+#include "HW6/hw6.hpp"
 
 int main() {
     // hw1::solution();
     // hw2::solution();
     // hw3::solution();
     // hw4::solution();
-    hw5::solution();
+    // hw5::solution();
+    hw6::solution();
 }

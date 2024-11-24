@@ -20,7 +20,7 @@ include(./cmake/utils.cmake)
 
 set(CMAKE_CXX_STANDARD 20)
 
-project(editorOtus VERSION ${PROJECT_VERSION})
+project(matrix VERSION ${PROJECT_VERSION})
 
 add_executable(${PROJECT_NAME} main.cpp)
 
@@ -29,7 +29,8 @@ add_executable(${PROJECT_NAME} main.cpp)
 # ADD_HW(2)
 # ADD_HW(3)
 # ADD_HW(4)
-ADD_HW(5)
+# ADD_HW(5)
+ADD_HW(6)
 
 # DEB
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
