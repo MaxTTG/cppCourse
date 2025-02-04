@@ -16,7 +16,7 @@ jobs:
       - name: Install Boost libraries
         run: |
           sudo apt-get update
-          sudo apt-get install -y libboost-dev
+          sudo apt-get install -y libboost-program-options-dev libboost-filesystem-dev libboost-regex-dev
       - name: Project build
         run: |
           cmake . -DPATCH_VERSION=${{ github.run_number }}
