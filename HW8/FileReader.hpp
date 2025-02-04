@@ -14,7 +14,12 @@ struct FileReader {
     // Кэш прочитанных блоков: blockHashes[i] содержит хэш i-го блока
     std::vector<uint32_t> blockHashes;
 
-    FileReader(const boost::filesystem::path &p, uint64_t s);
+    FileReader(const boost::filesystem::path &p, uint64_t s) : path(p), size(s) {
+        stream.open(p.string(), std::ios::binary);
+        if (!stream) {
+            throw std::runtime_error("Не удалось открыть файл: " + p.string());
+        }
+    }
 };
 
 }  // namespace hw8

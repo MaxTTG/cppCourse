@@ -11,7 +11,6 @@ set(HEADERS
 
 set(SOURCES
     hw8.cpp
-    FileReader.cpp
 )
 
 add_library(HW8_LIB ${HEADERS} ${SOURCES})
