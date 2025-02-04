@@ -10,7 +10,8 @@ uint32_t readBlockAndCompute(FileReader &reader, size_t blockSize) {
     return crc.checksum();
 }
 
-void processGroup(std::vector<FileReader *> &readers, size_t blockIndex, size_t blockSize, size_t totalBlocks, std::vector<std::vector<FileReader *> > &duplicates) {
+void processGroup(std::vector<FileReader *> &readers, size_t blockIndex, size_t blockSize, size_t totalBlocks,
+                  std::vector<std::vector<FileReader *>> &duplicates) {
     if (readers.size() < 2) {
         return;
     }
@@ -76,56 +77,6 @@ boost::regex wildcardToRegex(const std::string &mask, bool caseInsensitive) {
     } else {
         return boost::regex(regexStr);
     }
-}
-
-Options parseOptions(int argc, char *argv[]) {
-    Options opts;
-    po::options_description desc("Доступные опции");
-    // clang-format off
-    desc.add_options()
-            ("help,h",                                                           "Показать справку")
-            ("scan-dir",    po::value<std::vector<std::string>>()->multitoken(), "Директории для сканирования")
-            ("exclude-dir", po::value<std::vector<std::string>>()->multitoken(), "Директории, исключаемые из сканирования")
-            ("depth",       po::value<int>()->default_value(0),                  "Уровень сканирования (0 - только указанная директория, >0 - с вложенными)")
-            ("min-size",    po::value<uint64_t>()->default_value(1),             "Минимальный размер файла (в байтах)")
-            ("mask",        po::value<std::vector<std::string>>()->multitoken(), "Маски имен файлов (поддерживаются * и ?)")
-            ("block-size",  po::value<size_t>()->required(),                     "Размер блока S (в байтах)");
-    // clang-format on
-
-    po::variables_map vm;
-    po::store(po::parse_command_line(argc, argv, desc), vm);
-
-    if (vm.count("help")) {
-        std::cout << desc << std::endl;
-        exit(0);
-    }
-
-    po::notify(vm);
-
-    if (vm.count("scan-dir"))
-        opts.scanDirs = vm["scan-dir"].as<std::vector<std::string>>();
-    else {
-        std::cerr << "Необходимо указать хотя бы одну директорию для сканирования (--scan-dir)" << std::endl;
-        exit(1);
-    }
-
-    if (vm.count("exclude-dir")) {
-        for (const auto &d : vm["exclude-dir"].as<std::vector<std::string>>()) {
-            opts.excludeDirs.insert(fs::canonical(fs::path(d)));
-        }
-    }
-
-    opts.depth     = vm["depth"].as<int>();
-    opts.minSize   = vm["min-size"].as<uint64_t>();
-    opts.blockSize = vm["block-size"].as<size_t>();
-
-    if (vm.count("mask")) {
-        for (const auto &m : vm["mask"].as<std::vector<std::string>>()) {
-            opts.masks.push_back(wildcardToRegex(m));
-        }
-    }
-
-    return opts;
 }
 
 bool fileMatchesConditions(const boost::filesystem::path &filePath, const Options &opts, uint64_t fsize) {
@@ -215,7 +166,7 @@ std::vector<FileInfo> scanDirectories(const Options &opts) {
         }
 
         std::vector<FileInfo> filesInDir =
-                (opts.depth ? scanDirectoryRecursive(dirPath, opts) : scanDirectoryNonRecursive(dirPath, opts));
+            (opts.depth ? scanDirectoryRecursive(dirPath, opts) : scanDirectoryNonRecursive(dirPath, opts));
 
         allFiles.insert(allFiles.end(), filesInDir.begin(), filesInDir.end());
     }
@@ -223,7 +174,7 @@ std::vector<FileInfo> scanDirectories(const Options &opts) {
     return allFiles;
 }
 
-std::unordered_map<uint64_t, std::vector<FileInfo> > groupFilesBySize(const std::vector<FileInfo> &files) {
+std::unordered_map<uint64_t, std::vector<FileInfo>> groupFilesBySize(const std::vector<FileInfo> &files) {
     std::unordered_map<uint64_t, std::vector<FileInfo>> filesBySize;
     for (const auto &f : files) {
         filesBySize[f.size].push_back(f);
