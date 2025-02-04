@@ -15,7 +15,8 @@ set(SOURCES
 
 add_library(HW8_LIB ${HEADERS} ${SOURCES})
 
-target_link_libraries(bayan PUBLIC Boost::program_options Boost::filesystem Boost::regex)
+target_include_directories(HW8_LIB PUBLIC ${Boost_INCLUDE_DIRS})
+target_link_libraries(HW8_LIB PUBLIC Boost::program_options Boost::filesystem Boost::regex)
 
 set_target_properties(HW8_LIB PROPERTIES
     CXX_STANDARD 17
