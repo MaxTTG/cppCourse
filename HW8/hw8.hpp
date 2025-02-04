@@ -201,15 +201,15 @@ std::vector<FileInfo> scanDirectoryNonRecursive(const fs::path &dirPath, const O
 // Рекурсивный обход директории с учетом уровня глубины и исключаемых директорий.
 std::vector<FileInfo> scanDirectoryRecursive(const fs::path &dirPath, const Options &opts) {
     std::vector<FileInfo> files;
-    fs::recursive_directory_iterator end_itr;
-    for (fs::recursive_directory_iterator itr(dirPath); itr != end_itr; ++itr) {
-        if (itr.level() > opts.depth) {
-            itr.pop();
+    fs::recursive_directory_iterator end_it;
+    for (fs::recursive_directory_iterator it(dirPath); it != end_it; ++it) {
+        if (it.depth() > opts.depth) {
+            it.pop();
             continue;
         }
 
-        if (fs::is_regular_file(*itr)) {
-            fs::path canonicalPath = fs::canonical(itr->path());
+        if (fs::is_regular_file(*it)) {
+            fs::path canonicalPath = fs::canonical(it->path());
             bool excluded          = false;
             for (const auto &ex : opts.excludeDirs) {
                 if (canonicalPath.string().find(ex.string()) == 0) {
@@ -223,10 +223,10 @@ std::vector<FileInfo> scanDirectoryRecursive(const fs::path &dirPath, const Opti
             }
 
             try {
-                uint64_t fsize = fs::file_size(itr->path());
-                if (!fileMatchesConditions(itr->path(), opts, fsize))
+                uint64_t fsize = fs::file_size(it->path());
+                if (!fileMatchesConditions(it->path(), opts, fsize))
                     continue;
-                files.push_back({itr->path(), fsize});
+                files.push_back({it->path(), fsize});
             } catch (...) {
                 // Игнорируем файлы с ошибками доступа.
             }
