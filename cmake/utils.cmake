@@ -8,7 +8,7 @@ function(ADD_HW NUMBER)
         )
     else ()
         target_compile_options(HW${NUMBER}_LIB PRIVATE
-            -Wall -Wextra -pedantic -Werror
+            -Wall -Wextra -pedantic -Werror -fPIC
         )
     endif()
 endfunction(ADD_HW NUMBER)
