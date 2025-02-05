@@ -1,0 +1,17 @@
+project(HW12 VERSION ${MAJOR_VERSION}.${MINOR_VERSION}.${PATCH_VERSION})
+
+
+set(HEADERS
+    hw12.hpp
+)
+
+set(SOURCES
+    hw12.cpp
+)
+
+add_library(HW12_LIB ${HEADERS} ${SOURCES})
+
+set_target_properties(HW12_LIB PROPERTIES
+    CXX_STANDARD 17
+    CXX_STANDARD_REQUIRED ON
+)
