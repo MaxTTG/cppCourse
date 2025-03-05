@@ -33,11 +33,20 @@ std::vector<std::string> reduceFunctor(const std::vector<std::string> &block) {
     std::vector<std::string> result;
     size_t n = block.size();
     result.reserve(n);
-    for (size_t i = 0; i < n; ++i) {
+    for (size_t i = 0; i < n;) {
+        size_t j = i + 1;
+        while (j < n && block[j] == block[i]) {
+            ++j;
+        }
+
         const std::string *prev = (i > 0) ? &block[i - 1] : nullptr;
-        const std::string *next = (i < n - 1) ? &block[i + 1] : nullptr;
-        std::string minPrefix   = computeMinUniquePrefix(block[i], prev, next);
-        result.push_back(minPrefix);
+        const std::string *next = (j < n) ? &block[j] : nullptr;
+        std::string prefix      = computeMinUniquePrefix(block[i], prev, next);
+        for (size_t k = i; k < j; ++k) {
+            result.push_back(prefix);
+        }
+
+        i = j;
     }
 
     return result;
